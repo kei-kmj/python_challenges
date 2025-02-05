@@ -31,4 +31,47 @@ valid_temp = max(0, min(min_temp, 25) - max(max_temp, 20))
 min_distance, max_distance = [500, 3000]
 valid_distance = max(0, min(max_distance, 2000) - max(min_distance, 1000))
 ```
+
+```python
+# スライス表記
+# s[start:stop:step]
+# start: 開始位置,デフォルトは0
+# stop: 終了位置,デフォルトはリストの長さで、リストの最後の要素を含まない
+# step: ステップ数,デフォルトは1
+s = "abcdef"
+print(s[0:6:2])  # → 'ace'  (0, 2, 4 の文字を取得)
+
+sr = "abcdef"
+print(sr[::-1])  # → 'fedcba'  (逆順)
+```
+
+```python
+# next()はイテレータから次の要素を取得する
+
+iterator = iter([10, 20])
+print(next(iterator))  # → 10
+print(next(iterator))  # → 20
+
+# 値がなくなったときにデフォルト値を返す
+print(next(iterator, "default"))  # → 10
+print(next(iterator, "default"))  # → 20
+print(next(iterator, "default"))  # → default
+
+# 条件を満たす最初の値を取得する
+numbers = [5, 12, 18, 25]
+result = next(x for x in numbers if x > 10)
+
+print(result)  # → 12
+```
+
+```python
+# next()とタプルを使って、条件に合致する値を取得する
+# タプルはイミュータブル
+grades = [(90, "A"), (75, "B"), (60, "C")]
+score = 80
+
+# gradesをthreshold, letterに分割代入し、scoreがthreshold以上のletterを取得
+grade = next(letter for threshold, letter in grades if score >= threshold)
+print(grade)  # → "B"
+```
     
