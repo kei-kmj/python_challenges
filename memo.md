@@ -1,3 +1,4 @@
+from main import weather
 
 ```python
 # スペース区切りの一行目の入力値を取得
@@ -73,5 +74,23 @@ score = 80
 # gradesをthreshold, letterに分割代入し、scoreがthreshold以上のletterを取得
 grade = next(letter for threshold, letter in grades if score >= threshold)
 print(grade)  # → "B"
+```
+
+```python
+# divmod(m, n) は (m // n, m % n) の タプルを返す。
+m, n = 10, 3
+print(divmod(m, n))
+```
+
+```python
+# arr.count(x) は、リスト arr に含まれる要素 x の数を返す。
+weather = ["Sunny", "Sunny", "Rainy", "Sunny"]
+weather.count("Rain")
+```
+
+```python
+# dict.get(key, default) は、辞書 dict から key に対応する値を取得し、存在しない場合は default を返す。
+text = "404"
+print({"2": "ok", "4": "error"}.get(text[0], "unknown"))  # → "error"
 ```
     
