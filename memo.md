@@ -93,4 +93,27 @@ weather.count("Rain")
 text = "404"
 print({"2": "ok", "4": "error"}.get(text[0], "unknown"))  # → "error"
 ```
+
+```python
+# %を使って、ループする数値を計算できる
+# 時間計算
+# 8時間前を求める
+hour, minute = 16, 30
+print(f"{(hour - 8) % 24}:{minute}")
+
+# 12時間制に変換
+hour = 18
+print(hour % 12 or 12) 
+
+# 曜日の計算
+days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+today = 3  # 水曜日
+days_later = 10
+print(days[(today + days_later) % 7])  # → "Sat"
+
+# 円形リストの計算
+colors = ["Red", "Green", "Blue"]
+index = 5
+print(colors[index % len(colors)]) # → "Green"
+```
     
