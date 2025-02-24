@@ -1,6 +1,3 @@
-for i in range(1, 21, 4):
-    print(list(range(i, i + 3)))
+n = int(input())
 
-
-
-
+print("even" if n % 2 == 0 else "odd")
